@@ -1,0 +1,23 @@
+'/call-delivery.http.post': # event id. Will include path params. For ex. com.abc.do_kyc/{bank_id}/process/{user_id}
+  fn: com.biz.call-delivery
+  summary: calling another microservice
+  description: get status of delivery
+  body:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+  responses:
+    '200':
+      description: Delivery is working.
+      schema:
+        type: string
+    '400':
+      description: Not able to get delivery status.
+      schema:
+        type: string
+ 
+

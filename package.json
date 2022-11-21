@@ -1,10 +1,10 @@
 {
-  "name": "proj_upd",
+  "name": "restaurant",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch ../gs_service/dist -r ../gs_service/dist/telemetry/tracing.js ../gs_service/dist/app.js | pino-pretty",
+    "dev": "nodemon --watch ../gs_service/dist -r ../gs_service/dist/telemetry/tracing.js ../gs_service/dist/app.js",
     "clean": "cd ../gs_service && npm run clean",
     "copy": "rsync -rv --exclude 'eg_config' src/* config ../gs_service/dist && touch ../gs_service/dist/app.js",
     "build": " npm i && npm run build-prisma && mkdir -p ../gs_service/project && rsync --delete -rv src config package.json ../gs_service/project/ && cd ../gs_service && npm run build",
@@ -22,12 +22,12 @@
   "devDependencies": {
     "nodemon": "^2.0.15",
     "pino-pretty": "^7.6.1",
-    "prisma": "^4.0.0"
+    "prisma": "^4.6.0"
   },
   "dependencies": {
     "@opentelemetry/api": "1.1.0",
     "@opentelemetry/core": "1.5.0",
-    "@prisma/client": "^3.14.0",
+    "@prisma/client": "^4.6.0",
     "godspeed-crud-api-generator": "^1.6.1",
     "newman": "^5.3.2",
     "openapi-to-postmanv2": "^3.2.1"

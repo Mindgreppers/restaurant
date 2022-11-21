@@ -20,9 +20,8 @@
 	]
     },
     "files.exclude": {
+        "**/.*": true,
         "**/gs_service": true,
-        "**/node_modules": true,
-        "**/package*": true,
-        "**/.*": true    
+        "**/node_modules": true
     }
 }

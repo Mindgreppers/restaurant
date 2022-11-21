@@ -1,0 +1,56 @@
+Owner:
+  type: object
+  properties:
+    email:
+      type: string
+    name:
+      type: string
+      nullable: true
+    restaurants:
+      type: array
+      items:
+        $ref: '#/definitions/postgres/Restaurant'
+Restaurant:
+  type: object
+  properties:
+    createdAt:
+      type: string
+      format: date-time
+    name:
+      type: string
+    since:
+      type: string
+      format: date-time
+    isOpen:
+      type: boolean
+      default: false
+    opsStartTime:
+      type: string
+      format: date-time
+    opsEndTime:
+      type: string
+      format: date-time
+    owner:
+      $ref: '#/definitions/postgres/Owner'
+    ownerId:
+      type: integer
+    categories:
+      type: array
+      items:
+        $ref: '#/definitions/postgres/Category'
+    slug:
+      type: string
+    description:
+      type: string
+      nullable: true
+    location:
+      type: string
+Category:
+  type: object
+  properties:
+    name:
+      type: string
+    restaurants:
+      type: array
+      items:
+        $ref: '#/definitions/postgres/Restaurant'

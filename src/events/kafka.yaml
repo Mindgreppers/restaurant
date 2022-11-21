@@ -1,0 +1,9 @@
+notify-restaurant.my-kafka.my-kafka-group:
+  # a new message arrives on the topic_name
+  id: /kafkaWebhook
+  fn: com.biz.kafka
+  body: 
+    description: The body of the query
+    content:
+      application/json:
+        schema: 

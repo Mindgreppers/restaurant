@@ -1,0 +1,11 @@
+summary: Call the Delivery service
+tasks:
+    - id: call_delivery_step_1
+      fn: com.gs.http
+      args:
+        datasource: delivery
+        data: <% inputs.body %>
+        config:
+          url : /helloworld
+          method: post
+  

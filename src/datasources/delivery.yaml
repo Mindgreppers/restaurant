@@ -1,0 +1,2 @@
+type: api
+base_url: <% config.delivery.base_url %>

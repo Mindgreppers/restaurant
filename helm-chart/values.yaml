@@ -85,8 +85,18 @@ autoscaling:
 secrets:
   enabled: true
   data: 
-    username: avtar
-    password: test
+    username1: avtar
+    username2: rishabh
+
+
+existingsecret:
+  enabled: true
+  name: lp-secret
+
+env:
+  data: 
+    test1: env_block
+    test2: new_env_block
 
 nodeSelector: {}
 

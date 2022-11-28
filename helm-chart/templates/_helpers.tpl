@@ -71,3 +71,11 @@ Create the name of the service account to use
       key: {{ $key }}
 {{- end }}
 {{- end }}
+
+{{- define "helpers.list-extra-env-variables"}}
+{{- $name := default .Chart.Name .Values.nameOverride }}
+{{- range $key, $val := .Values.env.data }}
+- name: {{ $key }}
+  value: {{ $val }}
+{{- end }}
+{{- end }}

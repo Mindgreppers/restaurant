@@ -31,8 +31,18 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
+          {{- if .Values.existingsecret.enabled }}  
+          envFrom:
+          - secretRef:
+              name: {{ .Values.existingsecret.name }}    
+          {{- end}}
           env:
-          {{- include "helpers.list-env-variables" . | indent 12 }}            
+          {{- if .Values.secrets.enabled }}
+          {{- include "helpers.list-env-variables" . | indent 12 }}
+          {{- end }}
+          {{- if .Values.env }}
+          {{- include "helpers.list-extra-env-variables" . | indent 12 }}
+          {{- end }}           
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:

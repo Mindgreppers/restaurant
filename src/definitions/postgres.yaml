@@ -6,10 +6,6 @@ Owner:
     name:
       type: string
       nullable: true
-    restaurants:
-      type: array
-      items:
-        $ref: '#/definitions/postgres/Restaurant'
 Restaurant:
   type: object
   properties:
@@ -30,14 +26,9 @@ Restaurant:
     opsEndTime:
       type: string
       format: date-time
-    owner:
-      $ref: '#/definitions/postgres/Owner'
     ownerId:
       type: integer
-    categories:
-      type: array
-      items:
-        $ref: '#/definitions/postgres/Category'
+      nullable: true
     slug:
       type: string
     description:
@@ -45,12 +36,60 @@ Restaurant:
       nullable: true
     location:
       type: string
+    menuItems:
+      type: array
+      items:
+        $ref: '#/definitions/postgres/MenuItems'
 Category:
   type: object
   properties:
     name:
       type: string
-    restaurants:
+MenuItems:
+  type: object
+  properties:
+    name:
+      type: string
+    description:
+      type: string
+      nullable: true
+    restaurant:
+      $ref: '#/definitions/postgres/Restaurant'
+    restaurantId:
+      type: integer
+Order:
+  type: object
+  properties:
+    frmoRestaurant:
+      type: integer
+    orderStatus:
+      type: string
+      default: NOT_INITIATED
+      enum:
+        - NOT_INITIATED
+        - PLACED
+        - WAITING_FOR_APPROVAL_FROM_RESTAURANT
+        - WAITING_FOR_DELIVERY_PARTNER
+        - PICKUP_BY_DELIVERY_PARTNER
+        - DELIVERED
+    placedAt:
+      type: string
+      format: date-time
+    fulfilledAt:
+      type: string
+      format: date-time
+    orderItems:
       type: array
       items:
-        $ref: '#/definitions/postgres/Restaurant'
+        $ref: '#/definitions/postgres/OrderItem'
+OrderItem:
+  type: object
+  properties:
+    menuItemId:
+      type: integer
+    quantity:
+      type: integer
+    order:
+      $ref: '#/definitions/postgres/Order'
+    orderId:
+      type: integer

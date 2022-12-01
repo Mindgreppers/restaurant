@@ -83,7 +83,7 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 secrets:
-  enabled: true
+  enabled: false
   data: 
     username1: avtar
     username2: rishabh
@@ -91,7 +91,7 @@ secrets:
 
 existingsecret:
   enabled: true
-  name: lp-secret
+  name: db-creds
 
 env:
   data: 

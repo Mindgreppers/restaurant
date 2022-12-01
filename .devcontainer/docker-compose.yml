@@ -6,7 +6,7 @@ services:
     build:
       context: .
       args:
-        USER_UID: 1003
+        USER_UID: 1001
     environment:
       - SHELL=/bin/bash
       - MONGO_TEST_URL=mongodb://admin:mindgrep@mongodb1,mongodb2,mongodb3:27017/

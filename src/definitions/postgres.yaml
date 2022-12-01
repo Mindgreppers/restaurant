@@ -72,6 +72,7 @@ Order:
         - WAITING_FOR_DELIVERY_PARTNER
         - PICKUP_BY_DELIVERY_PARTNER
         - DELIVERED
+        - READY_TO_PICKUP
     placedAt:
       type: string
       format: date-time

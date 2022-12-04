@@ -98,6 +98,8 @@ env:
     OTEL_SERVICE_NAME: restaurant
     OTEL_EXPORTER_OTLP_METRICS_ENDPOINT: http://otel-collector.monitoring.svc:4317
 
+containerPort: 3000
+
 nodeSelector: {}
 
 tolerations: []

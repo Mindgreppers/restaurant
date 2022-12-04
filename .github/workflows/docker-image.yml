@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: adminmindgrep/orchestrator:${{ github.run_id }}
+        tags: adminmindgrep/restaurant:${{ github.run_id }}
 
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'

@@ -95,8 +95,8 @@ existingsecret:
 
 env:
   data: 
-    test1: env_block
-    test2: new_env_block
+    OTEL_SERVICE_NAME: restaurant
+    OTEL_EXPORTER_OTLP_METRICS_ENDPOINT: http://otel-collector.monitoring.svc:4317
 
 nodeSelector: {}
 

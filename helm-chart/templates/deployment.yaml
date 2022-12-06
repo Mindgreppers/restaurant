@@ -28,7 +28,7 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ default .Chart.Name .Values.nameOverride }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           {{- if .Values.existingsecret.enabled }}  

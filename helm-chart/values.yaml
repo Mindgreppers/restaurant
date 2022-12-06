@@ -12,7 +12,7 @@ image:
 
 imagePullSecrets: []
 name: ""
-nameOverride: ""
+nameOverride: "restaurant"
 fullnameOverride: ""
 
 serviceAccount:

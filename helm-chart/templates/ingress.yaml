@@ -31,14 +31,12 @@ spec:
       - host: {{ .host | quote }}
         http:
           paths:
-            {{- range .paths }}
             - pathType: Prefix
               backend:
                 service:
-                  name: {{ $fullName }}
+                  name: {{ .host | quote }}
                   port:
                     number: {{ $svcPort }}
               path: /
-          {{- end }}
     {{- end }}
   {{- end }}

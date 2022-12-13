@@ -1,6 +1,6 @@
 {
     "name": "restaurant",
-    "forwardPorts": [3001],
+    "forwardPorts": [3002],
     "remoteUser": "node",
     "settings": {
       "terminal.integrated.profiles.linux": {

@@ -1,1 +1,1 @@
-{"projectName":"restaurant","mongodb":false,"postgresql":true,"postgresDbName":"restaurant","kafka":false,"elasticsearch":false,"redis":false,"svcPort":3001,"postgresDbPort":5433}
+{"projectName":"restaurant","mongodb":false,"postgresql":true,"postgresDbName":"restaurant","kafka":false,"elasticsearch":false,"redis":false,"svcPort":3002,"postgresDbPort":5433}

@@ -6,18 +6,18 @@ services:
     build:
       context: .
       args:
-        USER_UID: 1001
+        USER_UID: 1000
     environment:
       - SHELL=/bin/bash
       - MONGO_TEST_URL=mongodb://admin:mindgrep@mongodb1,mongodb2,mongodb3:27017/
       - POSTGRES_URL=postgresql://postgres:postgres@postgres:5432/restaurant
-      - PORT=3001
+      - PORT=3002
     volumes:
       - ..:/workspace/development/app:cached
       - ./scripts:/scripts
     working_dir: /workspace/development/app
     ports:
-      - 3001:3001
+      - 3002:3002
 
     depends_on:
 

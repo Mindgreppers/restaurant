@@ -1,6 +1,5 @@
 log_level: debug
 api_version: "1.0"
 lang: coffee
-delivery:
-  base_url: http://172.17.0.1:3000
-  
+server_url: http://restaurant.godspeed.systems
+

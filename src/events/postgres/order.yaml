@@ -79,7 +79,7 @@
     content:
       application/json:
         schema:
-          $ref: '#/definitions/postgres/Order'
+          type: object
   responses:
     content:
       application/json:

@@ -7,4 +7,4 @@ tasks:
       data:
         data: <% inputs.body %>
       config:
-        method: menuitems.create
+        method: menuItems.create

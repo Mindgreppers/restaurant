@@ -8,4 +8,4 @@ tasks:
         where:
           id: <% parseInt(inputs.params.id) %>
       config:
-        method: orderitem.findUnique
+        method: orderItem.findUnique

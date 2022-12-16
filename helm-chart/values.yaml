@@ -8,7 +8,7 @@ image:
   repository: adminmindgrep/restaurant
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: '3716215628'
+  tag: '3716260042'
 
 imagePullSecrets: []
 name: ""

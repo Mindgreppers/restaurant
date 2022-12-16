@@ -8,12 +8,12 @@ image:
   repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: '3715778945'
 
 imagePullSecrets: []
-name: ""
+name: '3715778945'
 nameOverride: "restaurant"
-fullnameOverride: ""
+fullnameOverride: '3715778945'
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -22,7 +22,7 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: ""
+  name: '3715778945'
 
 podAnnotations: {}
   # vault.hashicorp.com/agent-inject: 'true'

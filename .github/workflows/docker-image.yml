@@ -3,6 +3,8 @@ name: Docker Image CI/CD
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - 'helm-charts/values.yaml'    
   pull_request:
     branches: [ "main" ]
 

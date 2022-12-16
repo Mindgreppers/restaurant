@@ -32,29 +32,15 @@ jobs:
         push: true
         tags: adminmindgrep/restaurant:${{ github.run_id }}
 
-    - id: 'auth'
-      uses: 'google-github-actions/auth@v1'
-      with:
-        credentials_json: '${{ secrets.GCLOUD_AUTH_KEY }}'
-    
-    - name: 'Set up Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v1'
-
-    - name: 'Use gcloud CLI'
-      run: |
-          gcloud info
-
-    - id: 'get-credentials'
-      uses: 'google-github-actions/get-gke-credentials@v1'
-      with:
-        cluster_name: 'godspeed'
-        location: 'us-central1-c'
-    
-    - id: 'get-pods'
-      run: |
-          kubectl get pods -n app
-          helm ls -n app
-          cd helm-chart
-          helm upgrade restaurant . --set image.repository=adminmindgrep/restaurant --set image.tag=${{ github.run_id }} -n app
-          sleep 30
-          kubectl get pods -n app
+    - name: Edit helm chart and push back to gitHub
+      run: | 
+          git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/Mindgreppers/restaurant.git
+          pwd
+          cd restaurant/helm-chart/
+          OLD_TAG=`grep "tag: " values.yaml | awk '{print $2}'`
+          sed -i "s/$OLD_TAG/'${{ github.run_id }}'/g" values.yaml
+          git config user.name "Rishabh"
+          git config user.email "rishabh@godspeed.systems"
+          git add values.yaml
+          git commit -m "Upgraded the orchestrator image tag to ${{ github.run_id }}"
+          git push

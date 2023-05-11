@@ -1,0 +1,2 @@
+"* * * * *.cron.Asia/Kolkata":
+ fn: com.every_minute

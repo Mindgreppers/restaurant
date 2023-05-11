@@ -1,4 +1,4 @@
-FROM adminmindgrep/gs_service:1.0.24 AS appbuild
+FROM adminmindgrep/gs_service:latest AS appbuild
 RUN mkdir /workspace/development/app && sudo  npm install -g @mindgrep/godspeed
 WORKDIR /workspace/development/app
 COPY --chown=node:node . .

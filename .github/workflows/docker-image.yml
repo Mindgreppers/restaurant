@@ -41,8 +41,8 @@ jobs:
           cd restaurant/helm-chart/
           OLD_TAG=`grep "tag: " values.yaml | awk '{print $2}'`
           sed -i "s/$OLD_TAG/'${{ github.run_id }}'/g" values.yaml
-          git config user.name "Rishabh"
-          git config user.email "rishabh@godspeed.systems"
+          git config user.name "avtar"
+          git config user.email "avtar@mindgrep.com"
           git add values.yaml
           git commit -m "Upgraded the orchestrator image tag to ${{ github.run_id }}"
           git push

@@ -1,7 +1,7 @@
 log_level: debug
 api_version: "1.0"
 lang: coffee
-# server_url: http://restaurant.godspeed.systems
+server_url: http://restaurant.godspeed.systems
 jwt:
   iss: ms.sample.com
   aud: sample.com

@@ -24,7 +24,10 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations: {}
+podAnnotations:
+  godspeed.systems/collection_interval: 30s
+  godspeed.systems/port: "3000"
+  godspeed.systems/scrape: "true"
   # vault.hashicorp.com/agent-inject: 'true'
   # vault.hashicorp.com/role: 'vault-role'
   # vault.hashicorp.com/agent-inject-secret-app-credentials.sh: 'internal/data/database/config'
